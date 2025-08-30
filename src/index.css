@@ -4,6 +4,17 @@
   --font-prompt: "Prompt", sans-serif;
 }
 
+/* @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+} */
+
 /* * {
   margin: 0;
   padding: 0;

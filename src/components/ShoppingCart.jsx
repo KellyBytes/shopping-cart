@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import CartItem from './CartItem';
 import { formatCurrency } from '../utilities/formatCurrency';
 
-const ShoppingCart = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const ShoppingCart = ({ isOpen, setIsOpen }) => {
+  // const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [numberOfItems, setNumberOfItems] = useState(0);
