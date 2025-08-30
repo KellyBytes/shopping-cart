@@ -1,5 +1,10 @@
 import { createContext, useContext, useState } from 'react';
 import { allProducts } from '../assets/data';
+import {
+  getItemFromStorage,
+  getParsedItemFromStorage,
+  setItemInStorage,
+} from '../utilities/localStorageFunctions';
 
 // Create Context
 const CartContext = createContext();
@@ -42,8 +47,38 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const setLocalStorage = () => {
+    if (allItems.length !== 0) {
+      const inCartItems = allItems.filter((item) => item.inCart);
+      setItemInStorage('cartItems', inCartItems);
+    }
+  };
+
+  const setCartItemsFromStorage = () => {
+    if (getItemFromStorage('cartItems') !== null) {
+      const storageItems = getParsedItemFromStorage('cartItems');
+
+      setAllItems((prevItems) => {
+        return prevItems.map((item) => {
+          const matchedItem = storageItems.find((storageItem) => storageItem.id === item.id);
+          return matchedItem ? matchedItem : item;
+        });
+      });
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ allItems, setItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{
+        allItems,
+        setItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        setLocalStorage,
+        setCartItemsFromStorage,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

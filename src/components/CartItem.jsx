@@ -1,4 +1,3 @@
-import React from 'react';
 import CartButtons from './CartButtons';
 
 const CartItem = ({ item, fromCart }) => {
