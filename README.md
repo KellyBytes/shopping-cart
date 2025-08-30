@@ -12,14 +12,14 @@
 
 ## Images:
 
-<p>
 <p>Desktop</p>
+<p>
   <img src="./public/images/shopping-cart-1.png" width="300" style="margin-right: 10px;"/>
   <img src="./public/images/shopping-cart-2.png" width="300">
 </p>
 <br />
-<p>
 <p>Mobile</p>
+<p>
   <img src="./public/images/shopping-cart-3.png" width="120" style="margin-right: 10px;"/>
   <img src="./public/images/shopping-cart-4.png" width="120">
 </p>
