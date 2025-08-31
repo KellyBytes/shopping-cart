@@ -40,10 +40,10 @@ const App = () => {
 
   return (
     <div className="grid place-items-center py-20">
-      <h1 className="lg:text-5xl md:text-4xl text-3xl italic text-gray-500 mb-16 px-10 text-center font-sans">
+      <h1 className="lg:text-4xl md:text-3xl text-2xl italic text-gray-500 mb-16 px-10 text-center font-sans">
         Trend Alert: Must-Have Outfits of the Season
       </h1>
-      <div className="mb-4 text-gray-500 text-lg">
+      <div className="mb-4 text-gray-500 text-sm">
         <label htmlFor="category" className="mr-2">
           Category:{' '}
         </label>
@@ -63,14 +63,14 @@ const App = () => {
       <div ref={cartRef}>
         <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className="grid xl:grid-cols-3 lg:grid-cols-2 place-items-start gap-10 xl:px-6 px-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 place-items-start gap-10 lg:px-6 md:px-8">
         {/* {allItems?.map((item) => { */}
         {filteredItems.length > 0 ? (
           filteredItems?.map((item) => {
             return <CartItem key={item.id} item={item} />;
           })
         ) : (
-          <p className="col-start-2 text-center text-indigo-300 text text-4xl mt-20">
+          <p className="lg:col-start-2 lg:col-span-1 md:col-span-2 text-center text-indigo-300 text text-4xl mt-20">
             Sorry, no items...
           </p>
         )}

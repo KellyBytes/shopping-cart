@@ -31,7 +31,7 @@ const CartButtons = ({ item, fromCart }) => {
                 -
               </button>
               <p className="flex items-center gap-x-1 mx-1">
-                <span className="min-w-7 bg-green-100 grid place-items-center border border-gray-300 rounded-full">
+                <span className="min-w-6 bg-green-100 grid place-items-center text-sm border border-gray-300 rounded-full">
                   {item.quantity}
                 </span>
                 <span className="text-xs">in cart</span>
