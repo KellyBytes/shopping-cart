@@ -16,6 +16,7 @@ const CartItem = ({ item, fromCart }) => {
         <img
           src={imageUrl}
           alt="Product Image"
+          loading="lazy"
           className={`${
             !fromCart &&
             'max-h-58 aspect-auto group-hover:-translate-y-2 transition-all duration-500'
