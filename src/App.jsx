@@ -2,7 +2,10 @@ import CartItem from './components/CartItem';
 import ShoppingCart from './components/ShoppingCart';
 import { useCart } from './context/CartContext';
 import { useEffect, useState, useRef } from 'react';
-import { getItemFromStorage, getParsedItemFromStorage } from './utilities/localStorageFunctions';
+import {
+  getItemFromStorage,
+  getParsedItemFromStorage,
+} from './utilities/localStorageFunctions';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +66,7 @@ const App = () => {
       <div ref={cartRef}>
         <ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 place-items-start gap-10 lg:px-6 md:px-8">
+      <div className="w-[clamp(20rem,80vw,68rem)] grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xl:gap-8 gap-6 xl:px-8 px-4 ">
         {/* {allItems?.map((item) => { */}
         {filteredItems.length > 0 ? (
           filteredItems?.map((item) => {
